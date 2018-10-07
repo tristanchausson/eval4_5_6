@@ -1,0 +1,14 @@
+all:
+  doctrine:
+    class:        sfDoctrineDatabase
+    param:
+      dsn:        mysql:dbname=epicerie_simplon;host=localhost
+      username:   root
+      password:   root
+      attributes:
+        quote_identifier: false
+        use_native_enum: false
+        validate: all
+        idxname_format: %s_idx
+        seqname_format: %s_seq
+        tblname_format: %s

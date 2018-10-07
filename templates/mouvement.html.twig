@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="/build/main.css">
+
+<h1>Saisir un mouvement de stock</h1>
+
+<nav>
+	<ul>
+		<li><a href="/epicerie/accueil">Retour à l'accueil</a></li>
+		<li><a href="/epicerie/statistiques">Statistiques</a></li>
+		<li><a href="/epicerie/historique">Historique</a></li>
+		<li><a href="/epicerie/mouvement">Saisie de mouvement</a></li>
+		<li><a href="/epicerie/liste">Liste des articles</a></li>
+		<li><a href="/epicerie/creer">Créer  un article</a></li>
+		<li><a href="/epicerie/modifier">Modifier un article</a></li>
+	</ul>
+</nav>
+
+<form action="" method="post">
+	<select name="type">
+		<option selected="selected" value="">Type de mouvement</option>
+			{% for type in type %}
+				<option value="{{ type.typeMouvement.type }}">
+					{{ type.typeMouvement.type }}
+				</option>
+			{% endfor %}
+	</select>
+	<select name="sens">
+		<option selected="selected" value="">Sens du mouvement</option>
+			{% for sens in sens %}
+				<option value="{{ sens.sens }}">
+					{{ sens.sens }}
+				</option>
+			{% endfor %}
+	</select>
+	<select id="article" name="article">
+		<option selected="selected" value="">Article</option>
+			{% for article in article %}
+				<option value="{{ article.articleNom }}">
+					{{ article.articleNom }}
+				</option>
+
+			{% endfor %}
+			<option value="new">Nouvel article</option>
+	</select>
+	<input type="number" name="quantite" placeholder="Quantite" value="quantite">
+	<input type="submit" name="envoyer" value="Envoyer">
+</form>
+
+<form id="articleNew" class="articleSupplementaire" action="" method="post" name="articleSupplementaire">
+	<input type="text" name="nouvelArticle" placeholder="Article">	
+	<input type="number" step=".01" name="prixArticle" placeholder="Prix de vente">
+	<select name="categorie">
+		<option selected="selected" value="">Catégorie</option>
+			{% for categorie in categorie %}
+				<option value="{{ categorie.categorieNom }}">
+					{{ categorie.categorieNom }}
+				</option>
+			{% endfor %}
+	</select>
+	<select name="unite">
+		<option selected="selected" value="">Unité</option>
+			{% for unite in unite %}
+				<option value="{{ unite.uniteType }}">
+					{{ unite.uniteType }}
+				</option>
+			{% endfor %}
+	</select>
+	<select name="fournisseur">
+		<option selected="selected" value="">Fournisseur</option>
+			{% for fournisseur in fournisseur %}
+				<option value="{{ fournisseurNom.fournisseurNom }}">
+					{{ fournisseurNom.fournisseurNom }}
+				</option>
+			{% endfor %}
+	</select>
+	<input type="submit" name="valider" value="Valider">
+</form>
+
+<script type="text/javascript" src="/build/app.js"></script>

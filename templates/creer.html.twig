@@ -1,0 +1,35 @@
+<h1>Créer un nouvel article</h1>
+
+<nav>
+	<ul>
+		<li><a href="/epicerie/accueil">Retour à l'accueil</a></li>
+		<li><a href="/epicerie/statistiques">Statistiques</a></li>
+		<li><a href="/epicerie/historique">Historique</a></li>
+		<li><a href="/epicerie/mouvement">Saisie de mouvement</a></li>
+		<li><a href="/epicerie/liste">Liste des articles</a></li>
+		<li><a href="/epicerie/creer">Créer  un article</a></li>
+		<li><a href="/epicerie/modifier">Modifier un article</a></li>
+	</ul>
+</nav>
+
+{# <form action="" method="post" name="articleSupplementaire">
+	<input type="text" name="nouvelArticle" placeholder="Article">	
+	<input type="number" step=".01" name="prixArticle" placeholder="Prix de vente">
+	<select name="sens">
+		<option selected="selected" value="">Catégorie</option>
+			{% for categorie in categorie %}
+				<option value="{{ categorie.categorieNom }}">
+					{{ categorie.categorieNom }}
+				</option>
+			{% endfor %}
+	</select>
+	<select name="article">
+		<option selected="selected" value="">Unité</option>
+			{% for unite in unite %}
+				<option value="{{ unite.uniteType }}">
+					{{ unite.uniteType }}
+				</option>
+			{% endfor %}
+	</select>
+	<input type="submit" name="valider" value="Valider">
+</form> #}

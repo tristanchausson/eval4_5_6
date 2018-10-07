@@ -1,0 +1,21 @@
+<h1>Historique des mouvements de stock</h1>
+
+<nav>
+	<ul>
+		<li><a href="/epicerie/accueil">Retour à l'accueil</a></li>
+		<li><a href="/epicerie/statistiques">Statistiques</a></li>
+		<li><a href="/epicerie/historique">Historique</a></li>
+		<li><a href="/epicerie/mouvement">Saisie de mouvement</a></li>
+		<li><a href="/epicerie/liste">Liste des articles</a></li>
+		<li><a href="/epicerie/creer">Créer  un article</a></li>
+		<li><a href="/epicerie/modifier">Modifier un article</a></li>
+	</ul>
+</nav>
+
+{% for historique in historique %}
+	<h4>Mouvement : {{ historique.idmouvements }}</h4>
+	<p>Type de mouvement : {{ historique.typeMouvement.type }}</p>
+	<p>Article : {{ historique.article.articleNom }}</p>
+	<p>Quantité : {{ historique.quantite }}</p>
+	<p>Date : {{ historique.dateMouvement.date }}</p>
+{% endfor %}
