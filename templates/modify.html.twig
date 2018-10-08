@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="/build/main.css">
+
+<h1>Modifier un article</h1>
+
+<nav>
+	<ul>
+		<li><a href="/epicerie/accueil">Retour à l'accueil</a></li>
+		<li><a href="/epicerie/statistiques">Statistiques</a></li>
+		<li><a href="/epicerie/historique">Historique</a></li>
+		<li><a href="/epicerie/mouvement">Saisie de mouvement</a></li>
+		<li><a href="/epicerie/liste">Liste des articles</a></li>
+		<li><a href="/epicerie/creer">Créer  un article</a></li>
+		<li><a href="/epicerie/modifier">Modifier un article</a></li>
+	</ul>
+</nav>
+
+<form action="" method="GET">
+	<select id="article" name="a">
+		<option selected="selected" value="">Article</option>
+			{% for article in article %}
+				<option value="{{ article.idarticles }}">
+					{{ article.articleNom }}
+				</option>
+			{% endfor %}
+	</select>
+	<input type="submit" name="go">
+</form>
+
+
+<script type="text/javascript" src="/build/app.js"></script>

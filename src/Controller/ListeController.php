@@ -26,14 +26,13 @@ class ListeController extends AbstractController
       $article = $entityManager->getRepository('App:Articles')->findOneByArticleNom($_POST['supprimer']);
 
       try {
-      
         $entityManager->remove($article);
         $entityManager->flush();
 
       }catch (\Exception $e){
-        // alert('Impossible de supprimer l\'article car il est contenu dans un mouvement');
-        $this->addFlash('error','Impossible de supprimer l\'article car il est contenu dans un mouvement');
-            // echo $e->getMessage();
+        echo('Impossible de supprimer l\'article car il est contenu dans un mouvement');
+        // echo $e->getMessage();
+        // $this->addFlash('error', 'Impossible de supprimer l\'article car il est contenu dans un mouvement');
       }
     }
     
