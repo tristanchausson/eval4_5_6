@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/build/main.css">
+
 <h1>Modifier un article</h1>
 
 <nav>
@@ -11,51 +14,58 @@
 		<li><a href="/epicerie/modifier">Modifier un article</a></li>
 	</ul>
 </nav>
-
-<form id="article" action="" method="post">
-	<input type="text" name="nouvelArticle" value="{{ nom }}">	
-	<input type="number" step=".01" name="prixArticle" value="{{ prix }}">
-	<select name="categorie">
-		<option value="">Catégorie</option>
-			{% for categorie in categorie %}
-				{% if categorie.categorieNom == cat %}
-					<option value="{{ categorie.categorieNom }}" selected>
-						{{ categorie.categorieNom }}
-					</option>
-				{% else %}
-					<option value="{{ categorie.categorieNom }}">
-						{{ categorie.categorieNom }}
-					</option>
-				{% endif %}
-			{% endfor %}
-	</select>
-	<select name="unite">
-		<option value="">Unité</option>
-			{% for unite in unite %}
-				{% if unite.uniteType == unit %}
-					<option value="{{ unite.uniteType }}" selected>
-						{{ unite.uniteType }}
-					</option>
-				{% else %}
-					<option value="{{ unite.uniteType }}">
-						{{ unite.uniteType }}
-					</option>
-				{% endif %}
-			{% endfor %}
-	</select>
-	<select name="fournisseur">
-		<option value="">Fournisseur</option>
-			{% for fournisseur in fournisseur %}
-				{% if fournisseur.fournisseurNom == frs %}
-					<option value="{{ fournisseur.fournisseurNom }}" selected>
-						{{ fournisseur.fournisseurNom }}
-					</option>
-				{% else %}
-					<option value="{{ fournisseur.fournisseurNom }}">
-						{{ fournisseur.fournisseurNom }}
-					</option>
-				{% endif %}
-			{% endfor %}
-	</select>
-	<input type="submit" name="valider" value="Valider">
-</form>
+<div class="container-fluid">
+	<form id="article" action="" method="post">
+		<div class="row">
+			<div class="col-1"></div>
+					<div class="col-2"><input type="text" name="nouvelArticle" value="{{ nom }}"></div>
+					<div class="col-2"><input type="number" step=".01" name="prixArticle" value="{{ prix }}"></div>
+					<div class="col-2"><select name="categorie">
+						<option value="">Catégorie</option>
+							{% for categorie in categorie %}
+								{% if categorie.categorieNom == cat %}
+									<option value="{{ categorie.categorieNom }}" selected>
+										{{ categorie.categorieNom }}
+									</option>
+								{% else %}
+									<option value="{{ categorie.categorieNom }}">
+										{{ categorie.categorieNom }}
+									</option>
+								{% endif %}
+							{% endfor %}
+					</select></div>
+					<div class="col-2"><select name="unite">
+						<option value="">Unité</option>
+							{% for unite in unite %}
+								{% if unite.uniteType == unit %}
+									<option value="{{ unite.uniteType }}" selected>
+										{{ unite.uniteType }}
+									</option>
+								{% else %}
+									<option value="{{ unite.uniteType }}">
+										{{ unite.uniteType }}
+									</option>
+								{% endif %}
+							{% endfor %}
+					</select></div>
+					<div class="col-2"><select name="fournisseur">
+						<option value="">Fournisseur</option>
+							{% for fournisseur in fournisseur %}
+								{% if fournisseur.fournisseurNom == frs %}
+									<option value="{{ fournisseur.fournisseurNom }}" selected>
+										{{ fournisseur.fournisseurNom }}
+									</option>
+								{% else %}
+									<option value="{{ fournisseur.fournisseurNom }}">
+										{{ fournisseur.fournisseurNom }}
+									</option>
+								{% endif %}
+							{% endfor %}
+					</select></div>
+			<div class="col-1"></div>
+			<div class="col"></div>
+					<div class="col-2"><input class="valider" type="submit" name="valider" value="Valider"></div>
+			<div class="col"></div>
+		</div>
+	</form>
+</div>

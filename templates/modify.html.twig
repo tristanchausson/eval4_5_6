@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/build/main.css">
 
 <h1>Modifier un article</h1>
@@ -14,17 +15,25 @@
 	</ul>
 </nav>
 
-<form action="" method="GET">
-	<select id="article" name="a">
-		<option selected="selected" value="">Article</option>
-			{% for article in article %}
-				<option value="{{ article.idarticles }}">
-					{{ article.articleNom }}
-				</option>
-			{% endfor %}
-	</select>
-	<input type="submit" name="go">
-</form>
+<div class="container-fluid">
+	<form action="" method="GET">
+		<div class="row">
+			<div class="col-5"></div>
+				<div class="col-2"><select id="article" name="a">
+					<option selected="selected" value="">Article</option>
+						{% for article in article %}
+							<option value="{{ article.idarticles }}">
+								{{ article.articleNom }}
+							</option>
+						{% endfor %}
+				</select></div>
+			<div class="col-5"></div>
+			<div class="col"></div>
+				<div class="col-2"><input class="valider" type="submit" name="go"></div>
+			<div class="col"></div>
+		</div>
+	</form>
+</div>
 
 
 <script type="text/javascript" src="/build/app.js"></script>
