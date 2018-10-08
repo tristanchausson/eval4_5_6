@@ -67,8 +67,8 @@
 	<select name="fournisseur">
 		<option selected="selected" value="">Fournisseur</option>
 			{% for fournisseur in fournisseur %}
-				<option value="{{ fournisseurNom.fournisseurNom }}">
-					{{ fournisseurNom.fournisseurNom }}
+				<option value="{{ fournisseur.fournisseurNom }}">
+					{{ fournisseur.fournisseurNom }}
 				</option>
 			{% endfor %}
 	</select>

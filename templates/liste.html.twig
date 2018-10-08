@@ -14,8 +14,8 @@
 
 <form action="" method="post">
 	{% for article in articles %}
-		<h3><a href="/epicerie/modifier">{{ article.articleNom }}</a></h3>
-		<input type="submit" name="supprimer" value="{{ article.articleNom }}">
+		<h3><a href="/epicerie/modifier?a={{ article.idarticles }}">{{ article.articleNom }}</a></h3>
+		<button name="supprimer" value="{{ article.articleNom }}">Supprimer</button>
 	{% endfor %}
 	<br/>
 	<a href="/epicerie/creer"><input type="button" name="creer" value="Ajouter un nouvel article"></a>

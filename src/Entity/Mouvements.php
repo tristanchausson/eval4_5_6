@@ -50,7 +50,7 @@ class Mouvements
      *
      * @ORM\ManyToOne(targetEntity="Articles")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="article_id", referencedColumnName="idArticles")
+     *   @ORM\JoinColumn(name="article_id", referencedColumnName="idArticles", nullable=true)
      * })
      */
     private $article;

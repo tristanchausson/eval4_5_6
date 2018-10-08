@@ -12,10 +12,10 @@
 	</ul>
 </nav>
 
-{# <form action="" method="post" name="articleSupplementaire">
+<form id="article" action="" method="post">
 	<input type="text" name="nouvelArticle" placeholder="Article">	
 	<input type="number" step=".01" name="prixArticle" placeholder="Prix de vente">
-	<select name="sens">
+	<select name="categorie">
 		<option selected="selected" value="">Catégorie</option>
 			{% for categorie in categorie %}
 				<option value="{{ categorie.categorieNom }}">
@@ -23,7 +23,7 @@
 				</option>
 			{% endfor %}
 	</select>
-	<select name="article">
+	<select name="unite">
 		<option selected="selected" value="">Unité</option>
 			{% for unite in unite %}
 				<option value="{{ unite.uniteType }}">
@@ -31,5 +31,13 @@
 				</option>
 			{% endfor %}
 	</select>
+	<select name="fournisseur">
+		<option selected="selected" value="">Fournisseur</option>
+			{% for fournisseur in fournisseur %}
+				<option value="{{ fournisseur.fournisseurNom }}">
+					{{ fournisseur.fournisseurNom }}
+				</option>
+			{% endfor %}
+	</select>
 	<input type="submit" name="valider" value="Valider">
-</form> #}
+</form>

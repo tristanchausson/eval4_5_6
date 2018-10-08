@@ -11,3 +11,51 @@
 		<li><a href="/epicerie/modifier">Modifier un article</a></li>
 	</ul>
 </nav>
+
+<form id="article" action="" method="post">
+	<input type="text" name="nouvelArticle" value="{{ nom }}">	
+	<input type="number" step=".01" name="prixArticle" value="{{ prix }}">
+	<select name="categorie">
+		<option value="">Catégorie</option>
+			{% for categorie in categorie %}
+				{% if categorie.categorieNom == cat %}
+					<option value="{{ categorie.categorieNom }}" selected>
+						{{ categorie.categorieNom }}
+					</option>
+				{% else %}
+					<option value="{{ categorie.categorieNom }}">
+						{{ categorie.categorieNom }}
+					</option>
+				{% endif %}
+			{% endfor %}
+	</select>
+	<select name="unite">
+		<option value="">Unité</option>
+			{% for unite in unite %}
+				{% if unite.uniteType == unit %}
+					<option value="{{ unite.uniteType }}" selected>
+						{{ unite.uniteType }}
+					</option>
+				{% else %}
+					<option value="{{ unite.uniteType }}">
+						{{ unite.uniteType }}
+					</option>
+				{% endif %}
+			{% endfor %}
+	</select>
+	<select name="fournisseur">
+		<option value="">Fournisseur</option>
+			{% for fournisseur in fournisseur %}
+				{% if fournisseur.fournisseurNom == frs %}
+					<option value="{{ fournisseur.fournisseurNom }}" selected>
+						{{ fournisseur.fournisseurNom }}
+					</option>
+				{% else %}
+					<option value="{{ fournisseur.fournisseurNom }}">
+						{{ fournisseur.fournisseurNom }}
+					</option>
+				{% endif %}
+			{% endfor %}
+	</select>
+	<input type="submit" name="valider" value="Valider">
+</form>

@@ -61,7 +61,7 @@ class Articles
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Fournisseurs", inversedBy="article")
-     * @ORM\JoinTable(name="articles_fournisseurs",
+     * @ORM\JoinTable(name="Articles_fournisseurs",
      *   joinColumns={
      *     @ORM\JoinColumn(name="article_id", referencedColumnName="idArticles")
      *   },
