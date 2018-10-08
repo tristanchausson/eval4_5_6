@@ -20,7 +20,8 @@
 		<div class="col"></div>
 			<div class="col-9" style="display: flex;">
 				{% for historique in historique %}
-					<div class="historique col-3">
+				<div class="card h-100">
+					<div class="card-body">
 						<h4>Mouvement : {{ historique.idmouvements }}</h4>
 						<p>Type de mouvement : {{ historique.typeMouvement.type }}</p>
 						<p>Article : {{ historique.article.articleNom }}</p>
@@ -28,6 +29,7 @@
 						<p>Réalisé le : {{ historique.dateMouvement.date|date("d/m/Y") }}</p>
 						<p>À : {{ historique.dateMouvement.date|date("h:i:s") }}</p>
 					</div>
+				</div>
 				{% endfor %}
 			</div>
 		<div class="col"></div>
